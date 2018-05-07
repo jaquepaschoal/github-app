@@ -1,3 +1,6 @@
+require('normalize.css/normalize.css');
+require('styles/App.css');
+
 'use strict'
 import React, { PropTypes } from 'react'
 import Search from './search';
@@ -6,7 +9,7 @@ import Actions from './actions';
 import Repos from './repos';
 
 const AppContent = ({ userInfo, repos, starred, handleSearch }) => (
-  <div className='app'>
+  <div className='content'>
     <Search handleSearch={handleSearch}/>
     {!!userInfo && <UserInfo userInfo={userInfo} /> }
     {!!userInfo && <Actions /> }
@@ -22,6 +25,7 @@ const AppContent = ({ userInfo, repos, starred, handleSearch }) => (
       title='Favoritos: '
       repos={starred}
     /> }
+
   </div>
 )
 
