@@ -10,6 +10,8 @@ class AppComponent extends React.Component {
     this.state = {
       userInfo: {
         username: 'Jaqueline Paschoal',
+        photo: 'https://avatars3.githubusercontent.com/u/28562703?v=4',
+        login: 'jaquepaschoal',
         repos: 12,
         followers: 2,
         following: 3
