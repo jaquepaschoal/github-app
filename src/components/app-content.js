@@ -8,11 +8,11 @@ import UserInfo from './user-info';
 import Actions from './actions';
 import Repos from './repos';
 
-const AppContent = ({ userInfo, repos, starred, handleSearch }) => (
+const AppContent = ({ userInfo, repos, starred, handleSearch, getRepos, getStarred }) => (
   <div className='content'>
     <Search handleSearch={handleSearch}/>
     {!!userInfo && <UserInfo userInfo={userInfo} /> }
-    {!!userInfo && <Actions /> }
+    {!!userInfo && <Actions getRepos={getRepos} getStarred={getStarred}/> }
 
     {!!repos.length && <Repos
       className='repos'
@@ -24,6 +24,7 @@ const AppContent = ({ userInfo, repos, starred, handleSearch }) => (
       className='starred'
       title='Favoritos: '
       repos={starred}
+
     /> }
 
   </div>

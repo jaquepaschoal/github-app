@@ -38,12 +38,31 @@ class AppComponent extends React.Component {
       }
   }
 
+  getRepos(type) {
+    const value = this.state.userInfo.login;
+    ajax().get(`https://api.github.com/users/${value}/${type}`)
+    .then(
+      (result) => {
+        this.setState({
+          [type]: result.map((item)=>{
+              return {
+                link: item.html_url,
+                name: item.name
+              }
+          })
+        })
+      }
+    )
+  }
+
   render() {
     return <AppContent
       userInfo={this.state.userInfo}
       repos={this.state.repos}
       starred={this.state.starred}
       handleSearch={(e) => this.handleSearch(e)}
+      getRepos={(e) => this.getRepos('repos')}
+      getStarred={(e) => this.getRepos('starred')}
     />
   }
 }

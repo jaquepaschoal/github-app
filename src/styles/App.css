@@ -8,7 +8,11 @@ html,body {width: 100%;  display:flex;justify-content: center;align-content: cen
 .user-info-text { padding: 0 .5rem 0 .5rem; width: 100%}
 img { width: 8rem; height: 8rem;}
 h1 { font-size: 1.05rem; margin: 0}
+h2 { color: gray}
 a { color: blue}
 ul { padding: 0; list-style: none;}
+.repos li { border-bottom: 1px solid rgb(128,128,128,.5) ; padding: .5rem}
+li a { text-decoration: none; width: 100%;}
+li a:hover {  font-weight: bold}
 .actions { width: 100%; display: flex; justify-content: space-between; margin-top: 1rem;}
 .actions button {width: 49%; text-transform: uppercase;font-weight: bold; font-size: .7rem; height: 2rem; cursor: pointer}

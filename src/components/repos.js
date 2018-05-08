@@ -5,9 +5,9 @@ import React, { PropTypes } from 'react'
 const Repos = ({className,title, repos}) => (
   <div className={className}>
     <h2>{title}</h2>
-    <ul >
+    <ul className="repos" >
       {repos.map((repo)=>(
-        <li key={repo.link}><a href={repo.link}>{repo.name}</a></li>
+        <li key={Math.random()}><a href={repo.link}>{repo.name}</a></li>
       ))}
     </ul>
   </div>
