@@ -8,7 +8,7 @@ const Search = ({ handleSearch }) => (
   <div className='search'>
     <input type='search'
     placeholder='Digite o nome do usuário no Github'
-    onKeyUp={ handleSearch }
+    onKeyUp={handleSearch}
     />
   </div>
 )
