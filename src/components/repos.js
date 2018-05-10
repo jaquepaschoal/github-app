@@ -1,6 +1,8 @@
 'use strict'
 
-import React, { PropTypes } from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
+
 
 const Repos = ({className,title, repos}) => (
   <div className={className}>
@@ -18,7 +20,7 @@ Repos.defaultProps = {
   title: ''
 }
 
-Repos.propType = {
+Repos.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string.isRequired,
   repos: PropTypes.array

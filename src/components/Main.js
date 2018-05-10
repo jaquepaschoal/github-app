@@ -11,7 +11,8 @@ class AppComponent extends React.Component {
     this.state = {
       userInfo: null,
       repos: [],
-      starred: []
+      starred: [],
+      isFetching: false
     }
   }
 
@@ -27,7 +28,7 @@ class AppComponent extends React.Component {
       const enter = 13;
       const value = target.value;
       if( keyCode === enter ) {
-        target.disabled = true;
+        this.setState({ isFetching: true })
         ajax().get(this.getGithubApiUrl(value))
         .then(
           ( result ) => {
@@ -44,9 +45,8 @@ class AppComponent extends React.Component {
               starred:[]
             })
           })
-        .always(()=>{
-          target.disabled = false;
-        })
+
+        .always(()=> this.setState({ isFetching:false }))
       }
   }
 
@@ -69,11 +69,13 @@ class AppComponent extends React.Component {
 
   render() {
     return <AppContent
-      userInfo={this.state.userInfo}
-      repos={this.state.repos}
-      starred={this.state.starred}
+      {...this.state}
+      // userInfo={this.state.userInfo}
+      // repos={this.state.repos}
+      // starred={this.state.starred}
+      // isFetching={this.state.isFetching}
       handleSearch={(e) => this.handleSearch(e)}
-      getRepos={( ) => this.getRepos('repos')}
+      getRepos={() => this.getRepos('repos')}
       getStarred={() => this.getRepos('starred')}
     />
   }
