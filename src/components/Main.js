@@ -29,7 +29,7 @@ class AppComponent extends React.Component {
       const value = target.value;
       if( keyCode === enter ) {
         this.setState({ isFetching: true })
-        ajax().get(this.getGithubApiUrl(value))
+        ajax().get(this.getGithubApiUrl( value ))
         .then(
           ( result ) => {
             this.setState({
@@ -52,7 +52,8 @@ class AppComponent extends React.Component {
 
   getRepos( type ) {
     const value = this.state.userInfo.login;
-    ajax().get(this.getGithubApiUrl(value,type))
+    type === 'repos' ? this.setState({ starred: [] }) : this.setState({ repos: [] });
+    ajax().get(this.getGithubApiUrl( value,type ))
     .then(
       ( result ) => {
         this.setState({
