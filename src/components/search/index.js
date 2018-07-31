@@ -15,6 +15,10 @@ const Search = ({ handleSearch, isDisable }) => (
   </div>
 )
 
+Search.defaultProps = {
+  isDisable: false
+}
+
 Search.propTypes = {
   handleSearch: PropTypes.func.isRequired,
   isDisable: PropTypes.bool.isRequired

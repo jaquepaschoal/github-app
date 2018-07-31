@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const Actions = ({ getRepos, getStarred }) => (
   <div className='actions'>
-    <button onClick={getRepos} >Repositórios</button>
+    <button onClick={getRepos}>Repositórios</button>
     <button onClick={getStarred}>Favoritos</button>
   </div>
 )

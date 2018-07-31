@@ -16,12 +16,18 @@
     "serve:dist": "node server.js --env=dist",
     "start": "node server.js --env=dev",
     "test": "karma start",
-    "test:watch": "karma start --autoWatch=true --singleRun=false"
+    "test:watch": "karma start --autoWatch=true --singleRun=false",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": "",
   "keywords": [],
   "author": "Your name here",
   "devDependencies": {
+    "@storybook/addon-actions": "^3.4.8",
+    "@storybook/addon-links": "^3.4.8",
+    "@storybook/addons": "^3.4.8",
+    "@storybook/react": "^3.4.8",
     "babel-core": "^6.0.0",
     "babel-eslint": "^6.0.0",
     "babel-loader": "^6.0.0",
@@ -29,6 +35,7 @@
     "babel-preset-es2015": "^6.0.15",
     "babel-preset-react": "^6.0.15",
     "babel-preset-stage-0": "^6.5.0",
+    "babel-runtime": "^6.26.0",
     "bower-webpack-plugin": "^0.1.9",
     "chai": "^3.2.0",
     "copyfiles": "^1.0.0",
@@ -62,6 +69,7 @@
   },
   "dependencies": {
     "@fdaciuk/ajax": "^2.3.0",
+    "@storybook/cli": "^4.0.0-alpha.13",
     "core-js": "^2.0.0",
     "normalize.css": "^4.0.0",
     "prop-types": "^15.6.1",
